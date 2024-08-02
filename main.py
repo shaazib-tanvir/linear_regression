@@ -17,7 +17,7 @@ if __name__ == "__main__":
     lg.train()
 
     fig, ax = plt.subplots()
-    ax.plot([gdp_data[i][0] for i in range(20)], [gdp_data[i][1] for i in range(20)])
+    ax.scatter([gdp_data[i][0] for i in range(20)], [gdp_data[i][1] for i in range(20)], c="red")
 
     x = np.linspace(2000, 2025, 50)
     y = [lg.get(torch.tensor([_x, 1], device=device))[0].item() for _x in x]
